@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/facemesh/static/css/main.d481ab09.css",
+    "main.js": "/facemesh/static/js/main.536fe90d.js",
+    "index.html": "/facemesh/index.html",
+    "main.d481ab09.css.map": "/facemesh/static/css/main.d481ab09.css.map",
+    "main.536fe90d.js.map": "/facemesh/static/js/main.536fe90d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d481ab09.css",
+    "static/js/main.536fe90d.js"
+  ]
+}
