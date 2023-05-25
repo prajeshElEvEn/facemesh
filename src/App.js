@@ -50,7 +50,7 @@ function App() {
           <div className="logo">FaceMesh</div>
         </div>
         <div className="right">
-          <a href="http://" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/prajeshElEvEn/facemesh" target="_blank" rel="noopener noreferrer">
             <span>Github</span>
           </a>
         </div>
