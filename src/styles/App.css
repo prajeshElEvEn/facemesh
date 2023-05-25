@@ -1,14 +1,52 @@
-.App {
+.container {
   text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
+.header {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+.header .left .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1c1c1c;
+}
+.header .right a {
+  color: #4400ff;
+  text-decoration: none;
+  background: #e2d8ff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.main {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.main .cam {
+  overflow: hidden;
+  border-radius: 10px;
+  zindex: 9;
+  width: 640;
+  height: 480;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    width: 90%;
+  }
+  .main .cam {
+    width: 100%;
+    border-radius: 0;
+  }
 }/*# sourceMappingURL=App.css.map */

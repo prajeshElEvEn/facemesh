@@ -3,6 +3,7 @@ import * as facemesh from '@tensorflow-models/facemesh';
 import './styles/App.css';
 import { useEffect, useRef } from 'react';
 import Webcam from 'react-webcam';
+import { drawMesh } from './app/utilities';
 
 function App() {
   const webcamRef = useRef(null)
@@ -31,23 +32,33 @@ function App() {
       canvasRef.current.width = videoWidth
       canvasRef.current.height = videoHeight
       const face = await net.estimateFaces(video)
-      console.log(face)
-      // const ctx = canvasRef.current.getContext("2d")
-      // requestAnimationFrame(() => { drawMesh(face, ctx) })
+      // console.log(face)
+      const ctx = canvasRef.current.getContext("2d")
+      drawMesh(face, ctx)
     }
   }
 
-  // useEffect(() => {
-  //   runFacemesh()
-  // }, [])
+  useEffect(() => {
+    runFacemesh()
+  }, [])
 
-  runFacemesh()
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="container">
+      <div className="header">
+        <div className="left">
+          <div className="logo">FaceMesh</div>
+        </div>
+        <div className="right">
+          <a href="http://" target="_blank" rel="noopener noreferrer">
+            <span>Github</span>
+          </a>
+        </div>
+      </div>
+      <div className="main">
         <Webcam
           ref={webcamRef}
+          className='cam'
           style={{
             position: "absolute",
             marginLeft: "auto",
@@ -55,13 +66,12 @@ function App() {
             left: 0,
             right: 0,
             textAlign: "center",
-            zindex: 9,
-            width: 640,
-            height: 480,
+            // zindex: 9,
           }}
         />
         <canvas
           ref={canvasRef}
+          className='cam'
           style={{
             position: "absolute",
             marginLeft: "auto",
@@ -69,12 +79,10 @@ function App() {
             left: 0,
             right: 0,
             textAlign: "center",
-            zindex: 9,
-            width: 640,
-            height: 480,
+            // zindex: 9,
           }}
         />
-      </header>
+      </div>
     </div >
   );
 }
